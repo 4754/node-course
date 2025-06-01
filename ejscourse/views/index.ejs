@@ -1,0 +1,22 @@
+<%- include('components/header')%>
+<h1>Welcome To
+    <%if(title){%>
+      <%= title%>
+    <%}%>
+    <ul>
+        <%if(products){%>
+            <% products.forEach((item)=>{%>
+               <li><a href="/products/<%= item.id%>"><%= item.name%> - <%= item.price%></a></li>
+            <%})%>
+        <%}%>
+    </ul>
+
+    <%if(product){%>
+        <div>
+            <h1>Selected Product</h1>
+            <h2><%= product.name%></h2>
+            <h3><%= product.id%></h3>
+        </div>
+    <%}%>
+</h1>
+<%- include('components/footer')%>

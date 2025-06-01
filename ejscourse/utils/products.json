@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "description": "Ergonomic wireless mouse with adjustable DPI settings.",
+    "price": 25.99,
+    "category": "Electronics",
+    "stock": 120
+  },
+  {
+    "id": 2,
+    "name": "Bluetooth Headphones",
+    "description": "Noise-cancelling over-ear Bluetooth headphones with 20-hour battery life.",
+    "price": 79.99,
+    "category": "Audio",
+    "stock": 60
+  },
+  {
+    "id": 3,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with blue switches.",
+    "price": 45.00,
+    "category": "Computers",
+    "stock": 35
+  },
+  {
+    "id": 4,
+    "name": "Smart LED Light Bulb",
+    "description": "Color-changing smart bulb compatible with Alexa and Google Home.",
+    "price": 18.49,
+    "category": "Home",
+    "stock": 200
+  },
+  {
+    "id": 5,
+    "name": "Stainless Steel Water Bottle",
+    "description": "Insulated water bottle that keeps drinks cold for 24 hours.",
+    "price": 14.99,
+    "category": "Outdoors",
+    "stock": 150
+  }
+]
