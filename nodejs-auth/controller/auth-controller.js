@@ -27,7 +27,7 @@ const registerUser = async (req,res) =>{
                 message: "Error in creating user"
             })
         }
-        const token = jwt.sign({username: newUser.username, email: newUser.email, role: newUser.role},process.env.JSON_SECRET,{expiresIn: '5min'})
+        const token = jwt.sign({userId:newUser._id,username: newUser.username, email: newUser.email, role: newUser.role},process.env.JSON_SECRET,{expiresIn: '35min'})
         res.status(201).json({
                 success: true,
                 message: "User created successfully",
@@ -68,7 +68,7 @@ const loginUser = async (req,res) =>{
             })
         }
 
-        const token = jwt.sign({username: userInDB.username, email: userInDB.email, role: userInDB.role},process.env.JSON_SECRET,{expiresIn: '5min'});
+        const token = jwt.sign({userId:userInDB._id,username: userInDB.username, email: userInDB.email, role: userInDB.role},process.env.JSON_SECRET,{expiresIn: '35min'});
 
         res.status(200).json({
             message: "Successfully loged In",
