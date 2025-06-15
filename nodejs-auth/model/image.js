@@ -14,6 +14,6 @@ const ImageSchema = mongoose.Schema({
         ref: 'Users',
         required: [true, "Who uploaded is required"]
     }
-},{timestamp: true})
+},{timestamps: true})
 
 module.exports = mongoose.model("Image",ImageSchema)

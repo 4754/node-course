@@ -34,11 +34,25 @@ const uploadImage = async (req, res) => {
 
 const getAllImageController = async (req, res) => {
   try {
-    const images = await Image.find({});
+    const limit = req?.query?.limit ?? 2;
+    const currentPage = req?.query?.page ?? 1;
+    const sortBY = req?.query?.sortBy ?? "updatedAt";
+    const sortOrder = req?.query?.sortOrder === 'asc' ? 1 : -1;
+    const totalImages = await Image.countDocuments();
+    const totalPages = Math.ceil(totalImages/limit);
+    const skip = (currentPage-1) * limit;
+
+    const filterDoc = {};
+    filterDoc[sortBY] = sortOrder;
+
+    const images = await Image.find({}).sort(filterDoc).skip(skip).limit(limit);
     if (images) {
       return res.status(500).json({
         success: true,
         message: "Successfully fetched all images",
+        totalPages:totalPages,
+        totalImages: totalImages,
+        currentPage: currentPage,
         data: images,
       });
     }
