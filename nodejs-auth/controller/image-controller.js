@@ -31,6 +31,26 @@ const uploadImage = async (req,res) =>{
     }
 }
 
+const getAllImageController = async (req,res)=>{
+    try {
+       const images = await Image.find({});
+       if(images){
+        res.status(500).json({
+            success: true,
+            message: "Successfully fetched all images",
+            data: images,
+        })
+       }
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: error.message,
+            message: "Network error while fetching data!"
+        })
+    }
+}
+
 module.exports = {
     uploadImage,
+    getAllImageController
 }
